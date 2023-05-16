@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextListItem"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter task"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="151dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Add" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewToDo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="To do" />
+
+    <ListView
+        android:id="@+id/listToDo"
+        android:layout_width="match_parent"
+        android:layout_height="270dp" />
+
+    <Button
+        android:id="@+id/buttonCompleteTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Complete tasks" />
+
+    <TextView
+        android:id="@+id/textViewComplete"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Completed" />
+
+    <ListView
+        android:id="@+id/listCompleted"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

@@ -6,11 +6,16 @@ This is an app just for my personal use as I have ADHD and this is something I p
 ## Completed
 * Add items to a list
 * Add checkboxes to each list item
+* Save items to completed list
+* Ability to delete items
+
 
 ## To do
-* Save items to completed list
-* ability to delete items
+* show items that are selected vs ones that are not
 * ability to clear list
+* ability to edit exsisting list items
+* decide color scheme
+* decide title
 
 ## Nice to have
 * Menu

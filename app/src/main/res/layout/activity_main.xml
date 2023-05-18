@@ -38,7 +38,7 @@
     <ListView
         android:id="@+id/listToDo"
         android:layout_width="match_parent"
-        android:layout_height="270dp" />
+        android:layout_height="592dp" />
 
     <Button
         android:id="@+id/buttonCompleteTasks"
@@ -46,14 +46,4 @@
         android:layout_height="wrap_content"
         android:text="Complete tasks" />
 
-    <TextView
-        android:id="@+id/textViewComplete"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Completed" />
-
-    <ListView
-        android:id="@+id/listCompleted"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

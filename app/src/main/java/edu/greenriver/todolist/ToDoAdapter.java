@@ -30,7 +30,6 @@ public class ToDoAdapter extends ArrayAdapter<ItemView> {
         }
 
         ItemView currentItem = getItem(position);
-
         TextView textView = current.findViewById(R.id.textViewList);
         textView.setText(currentItem.getItem());
 

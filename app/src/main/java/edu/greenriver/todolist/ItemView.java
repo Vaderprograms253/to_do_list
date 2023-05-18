@@ -6,10 +6,15 @@ public class ItemView {
 
     public ItemView(String item){
         this.item = item;
+        this.checked = false;
 
     }
     public String getItem() {
         return item;
+    }
+
+    public void setChecked(boolean checked){
+        this.checked = checked;
     }
 
 }

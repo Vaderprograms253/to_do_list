@@ -1,4 +1,4 @@
-# To Do List
+# To Do List App
 
 ### Description
 This is an app just for my personal use as I have ADHD and this is something I plan on working on and using to help me stay organized but also continue working with android

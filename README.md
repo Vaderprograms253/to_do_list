@@ -19,6 +19,7 @@ This is an app just for my personal use as I have ADHD and this is something I p
 
 ## Nice to have
 * Menu
+* Swipe to delete
 * Create multiple lists
 
 

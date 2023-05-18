@@ -5,12 +5,14 @@ This is an app just for my personal use as I have ADHD and this is something I p
 
 ## Completed
 * Add items to a list
-* Add checkboxes to each list item
+* delete checkboxes
 * Save items to completed list
 * Ability to delete items
+* move completed list onto separate activity
 
 
 ## To do
+* add context menu
 * show items that are selected vs ones that are not
 * ability to clear list
 * ability to edit exsisting list items
@@ -18,7 +20,8 @@ This is an app just for my personal use as I have ADHD and this is something I p
 * decide title
 
 ## Nice to have
-* Menu
+* main page 
+* user login 
 * Swipe to delete
 * Create multiple lists
 

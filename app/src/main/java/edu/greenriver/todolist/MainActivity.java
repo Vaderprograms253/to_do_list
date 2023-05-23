@@ -1,8 +1,11 @@
 package edu.greenriver.todolist;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ItemView> itemList;
     private Button btn_add_toDo;
     private Button btn_complete;
+    private Button btn_addSelected;
     private Intent intent;
     private int count;
 
@@ -36,18 +40,47 @@ public class MainActivity extends AppCompatActivity {
         removeItem(toDoAdapter);
         goToCompleteList();
         listSelect();
+        saveCompleted();
     }
 
     private void listSelect(){
         listView_toDo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (complete_list.contains(toDoAdapter.getItem(i))){
+                    complete_list.remove(toDoAdapter.getItem(i));
+                }
                 count++;
+                view.setBackgroundColor(Color.YELLOW);
                 ItemView itemView = toDoAdapter.getItem(i);
                 String item = itemView.getItem();
                 complete_list.add(item);
-                btn_complete.setText("View Completed (" + count+ ")");
+                btn_addSelected.setText("Add Selected (" + count+ ")");
             }
+        });
+    }
+
+    private void saveCompleted(){
+        btn_addSelected.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("Do you want to add selected items?");
+                builder.setTitle("Complete Items (" + count + ")");
+                builder.setCancelable(true);
+                
+                builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
+
+                });
+
+                builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
+                    dialog.cancel();
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+            }
+
         });
     }
 
@@ -97,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         count = 0;
         complete_list = new ArrayList<>();
         editText_add = findViewById(R.id.editTextListItem);
+        btn_addSelected = findViewById(R.id.buttonAddSelected);
         btn_add_toDo = findViewById(R.id.buttonAdd);
         btn_complete = findViewById(R.id.buttonCompleteTasks);
         listView_toDo = findViewById(R.id.listToDo);

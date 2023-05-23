@@ -18,6 +18,7 @@ public class CompleteList extends AppCompatActivity {
     private ListView listView_complete;
 
     private ArrayList<String> completeList;
+    private ArrayList<String> testList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,5 +34,8 @@ public class CompleteList extends AppCompatActivity {
     private void initialize(){
         textView_complete = findViewById(R.id.textViewComplete);
         listView_complete = findViewById(R.id.listViewCompleted);
+        testList = new ArrayList<>();
+        testList.add("Test");
+        testList.add("Testing");
     }
 }

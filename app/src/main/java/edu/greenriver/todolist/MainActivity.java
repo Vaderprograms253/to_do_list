@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_add_toDo;
     private Button btn_complete;
     private Intent intent;
+    private int count;
 
     private ToDoAdapter toDoAdapter;
     private final String REFERENCE_COMPLETE_ITEMS = "completed";
@@ -41,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         listView_toDo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                count++;
                 ItemView itemView = toDoAdapter.getItem(i);
                 String item = itemView.getItem();
                 complete_list.add(item);
+                btn_complete.setText("View Completed (" + count+ ")");
             }
         });
     }
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initialize(){
         intent = new Intent(MainActivity.this, CompleteList.class);
+        count = 0;
         complete_list = new ArrayList<>();
         editText_add = findViewById(R.id.editTextListItem);
         btn_add_toDo = findViewById(R.id.buttonAdd);

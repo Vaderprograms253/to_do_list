@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private ToDoAdapter toDoAdapter;
     private final String REFERENCE_COMPLETE_ITEMS = "completed";
     private final String REFERENCE_COMPLETE_ITEMS_SET = "complete set";
+    ArrayList<String> complete_list_temp;
     ArrayList<String> complete_list;
 
     @Override
@@ -48,14 +49,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (complete_list.contains(toDoAdapter.getItem(i))){
-                    complete_list.remove(toDoAdapter.getItem(i));
+                if (complete_list_temp.contains(toDoAdapter.getItem(i))){
+                    complete_list_temp.remove(toDoAdapter.getItem(i));
                 }
                 count++;
                 view.setBackgroundColor(Color.YELLOW);
                 ItemView itemView = toDoAdapter.getItem(i);
                 String item = itemView.getItem();
-                complete_list.add(item);
+                complete_list_temp.add(item);
                 btn_addSelected.setText("Add Selected (" + count+ ")");
             }
         });
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.setCancelable(true);
                 
                 builder.setPositiveButton("Yes", (DialogInterface.OnClickListener) (dialog, which) -> {
-
+                    complete_list = complete_list_temp;
                 });
 
                 builder.setNegativeButton("No", (DialogInterface.OnClickListener) (dialog, which) -> {
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         btn_complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), CompleteList.class);
+                intent = new Intent(getApplicationContext(), CompleteList.class);
                 intent.putExtra("complete list", complete_list);
                 startActivity(intent);
             }
@@ -128,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
     private void initialize(){
         intent = new Intent(MainActivity.this, CompleteList.class);
         count = 0;
+        complete_list_temp = new ArrayList<>();
         complete_list = new ArrayList<>();
         editText_add = findViewById(R.id.editTextListItem);
         btn_addSelected = findViewById(R.id.buttonAddSelected);

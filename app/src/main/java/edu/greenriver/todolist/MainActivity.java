@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!currentItem.isEmpty()){
                     itemList.add(new ItemView(currentItem));
                     toDoAdapter.notifyDataSetChanged();
+                    editText_add.setText("");
                 }
             }
         });

@@ -9,6 +9,7 @@ This is an app just for my personal use as I have ADHD and this is something I p
 * Save items to completed list
 * Ability to delete items
 * move completed list onto separate activity
+* Bottom navigation
 
 
 ## To do
